@@ -1,0 +1,75 @@
+{% extends 'basa.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+{% block title %}
+Главная | FIGHT ACADEMY
+{% endblock %}
+
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div class="hero_text">
+        <h1>
+            Стань сильнее<br>
+            вместе с <span>FIGHT ACADEMY</span>
+        </h1>
+
+        <p>
+            Профессиональные тренировки по боевым искусствам.
+            Развивай силу, дисциплину и уверенность в себе.
+        </p>
+
+        <a href="{% url 'contact' %}" class="btn">
+            Записаться на тренировку
+        </a>
+    </div>
+
+
+    <div class="hero_image">
+        <img src="{% static 'svg/logo.svg' %}" alt="Fight Academy">
+    </div>
+
+</section>
+
+
+
+<section class="advantages">
+
+    <h2>Почему выбирают нас?</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🥊 Опытные тренеры</h3>
+            <p>
+                Профессиональные наставники помогут достичь результата.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🔥 Развитие силы</h3>
+            <p>
+                Тренировки для выносливости, скорости и уверенности.
+            </p>
+        </div>
+
+
+        <div class="card">
+            <h3>🏆 Результат</h3>
+            <p>
+                Подготовка спортсменов любого уровня.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

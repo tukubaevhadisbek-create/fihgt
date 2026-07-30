@@ -1,0 +1,100 @@
+{% extends 'basa.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+
+{% block title %}
+Контакты | FIGHT ACADEMY
+{% endblock %}
+
+
+{% block content %}
+
+<section class="contact">
+
+    <div class="contact_info">
+
+        <h1>КОНТАКТЫ</h1>
+
+        <p>📞 0225280808</p>
+        <p>✈ 0776007368</p>
+        <p>📍 Ош</p>
+        <p>✉ tukubaevhadisbek@gmail.com</p>
+
+
+        <div class="social">
+            <span>Мы в соцсетях</span>
+            <br>
+            Instagram | VK | YouTube
+        </div>
+
+    </div>
+
+
+    <div class="contact_form">
+
+        <h2>Записаться на тренировку</h2>
+
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+
+            <input 
+                type="text" 
+                name="name" 
+                placeholder="Ваше имя"
+                required
+            >
+
+
+            <input 
+                type="text" 
+                name="phone" 
+                placeholder="Номер телефона"
+                required
+            >
+
+
+            <select name="naprav" required>
+
+                <option value="">
+                    Выберите направление
+                </option>
+
+
+                {% for direction in directions %}
+
+                    <option value="{{ direction.name }}">
+                        {{ direction.name }}
+                    </option>
+
+                {% endfor %}
+
+
+            </select>
+
+
+            <textarea 
+                name="description" 
+                placeholder="Сообщение (необязательно)"
+            ></textarea>
+
+
+            <button type="submit">
+                Отправить заявку
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+{% endblock %}

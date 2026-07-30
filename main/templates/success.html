@@ -1,0 +1,30 @@
+{% extends 'basa.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/success.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="success_page">
+
+    <div class="success_box">
+
+        <h1>✅ Заявка отправлена!</h1>
+
+        <p>
+            Спасибо за запись.<br>
+            Мы свяжемся с вами в ближайшее время.
+        </p>
+
+        <a href="{% url 'home' %}">
+            На главную
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

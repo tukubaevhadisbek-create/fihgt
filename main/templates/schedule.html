@@ -1,0 +1,47 @@
+{% extends 'basa.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/schedule.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<section class="schedule">
+
+<h1>РАСПИСАНИЕ ТРЕНИРОВОК</h1>
+
+<div class="red_line"></div>
+
+
+<table class="schedule_table">
+
+<thead>
+<tr>
+    <th>ДЕНЬ</th>
+    <th>ЧАС</th>
+    <th>ВИД</th>
+</tr>
+</thead>
+
+
+<tbody>
+
+{% for item in schedules %}
+
+<tr>
+    <td>{{ item.day }}</td>
+    <td>{{ item.time }}</td>
+    <td>{{ item.group }}</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+
+</section>
+
+{% endblock %}

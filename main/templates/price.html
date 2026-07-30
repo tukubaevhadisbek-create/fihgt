@@ -1,0 +1,94 @@
+{% extends 'basa.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/price.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="prices">
+
+<h1>Стоимость тренировок</h1>
+
+
+<div class="price_cards">
+
+
+{% for item in prices %}
+
+<div class="price_card">
+
+
+<h2>
+{{ item.type }}
+</h2>
+
+
+<h3>
+{{ item.price }} сом
+</h3>
+
+
+<ul>
+
+<li>
+<svg class="check" width="25" height="25" viewBox="0 0 200 200" fill="none">
+<path d="M25 105L75 155L180 25"
+stroke="#ff1f1f"
+stroke-width="35"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
+
+{{ item.bonus1 }}
+
+</li>
+
+
+<li>
+<svg class="check" width="25" height="25" viewBox="0 0 200 200" fill="none">
+<path d="M25 105L75 155L180 25"
+stroke="#ff1f1f"
+stroke-width="35"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
+
+{{ item.bonus2 }}
+
+</li>
+
+
+<li>
+<svg class="check" width="25" height="25" viewBox="0 0 200 200" fill="none">
+<path d="M25 105L75 155L180 25"
+stroke="#ff1f1f"
+stroke-width="35"
+stroke-linecap="round"
+stroke-linejoin="round"/>
+</svg>
+
+{{ item.bonus3 }}
+
+</li>
+
+
+</ul>
+
+
+</div>
+
+
+{% endfor %}
+
+
+</div>
+
+
+</section>
+
+
+{% endblock %}

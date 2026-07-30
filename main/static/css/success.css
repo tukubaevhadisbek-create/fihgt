@@ -1,0 +1,48 @@
+.success_page {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.success_box {
+    background: #1b1b1b;
+    padding: 50px;
+    border-radius: 20px;
+    width: 450px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.3);
+}
+
+
+.success_box h1 {
+    color: #e50914;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+.success_box p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+
+.success_box a {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #e50914;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+
+.success_box a:hover {
+    background: #b0060f;
+    transform: scale(1.05);
+}
