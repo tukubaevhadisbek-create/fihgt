@@ -29,8 +29,8 @@ def contact(request):
 
 
         # Telegram Render Environment Variables
-        TOKEN = os.getenv("BOT_TOKEN")
-        CHAT_ID = os.getenv("CHAT_ID")
+        TOKEN = os.getenv("8866755375:AAG_7p-TdEV-Y4qiJD3nGRiy5CMnlWNZBtA")
+        CHAT_ID = os.getenv("7699419219")
 
 
         text = (
@@ -46,7 +46,7 @@ def contact(request):
             response = requests.post(
                 f"https://api.telegram.org/bot{TOKEN}/sendMessage",
                 data={
-                    "chat_id": CHAT_ID,
+                    "chat_id": 7699419219,
                     "text": text
                 },
                 timeout=10
