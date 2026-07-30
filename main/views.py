@@ -17,7 +17,8 @@ def contact(request):
             description=request.POST["description"]
         )
 
-        # сохранение в файл
+
+        # сохранение заявки в файл
         with open("applications.txt", "a", encoding="utf-8") as f:
             f.write(f"Имя: {training.name}\n")
             f.write(f"Телефон: {training.phone}\n")
@@ -26,7 +27,8 @@ def contact(request):
             f.write("-" * 40 + "\n")
 
 
-        # Telegram через Render Environment Variables
+
+        # Telegram Render Environment Variables
         TOKEN = os.getenv("BOT_TOKEN")
         CHAT_ID = os.getenv("CHAT_ID")
 
@@ -46,16 +48,22 @@ def contact(request):
                 data={
                     "chat_id": CHAT_ID,
                     "text": text
-                }
+                },
+                timeout=10
             )
 
+            print("Telegram response:")
             print(response.text)
 
+
         except Exception as e:
-            print("Telegram error:", e)
+            print("Telegram error:")
+            print(e)
+
 
 
         return render(request, "success.html")
+
 
 
     return render(request, "contact.html", {
@@ -66,6 +74,7 @@ def contact(request):
 
 
 def trenery(request):
+
     trenerys = Trenery.objects.all()
 
     return render(request, "trenery.html", {
@@ -75,6 +84,7 @@ def trenery(request):
 
 
 def schedule(request):
+
     schedules = Schedule.objects.all()
 
     return render(request, "schedule.html", {
@@ -84,6 +94,7 @@ def schedule(request):
 
 
 def price(request):
+
     prices = Price.objects.all()
 
     return render(request, "price.html", {
@@ -93,9 +104,11 @@ def price(request):
 
 
 def basa(request):
+
     return render(request, "basa.html")
 
 
 
 def home(request):
+
     return render(request, "home.html")
