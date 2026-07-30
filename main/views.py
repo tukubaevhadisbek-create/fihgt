@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Trenery, Schedule, Contact, Training, Price, Direction
 import requests
+import os
 
 
 def contact(request):
@@ -25,9 +26,9 @@ def contact(request):
             f.write("-" * 40 + "\n")
 
 
-        # Telegram
-        TOKEN = "ТВОЙ_ТОКЕН"
-        CHAT_ID = "ТВОЙ_CHAT_ID"
+        # Telegram через Render Environment Variables
+        TOKEN = os.getenv("BOT_TOKEN")
+        CHAT_ID = os.getenv("CHAT_ID")
 
 
         text = (
@@ -39,13 +40,19 @@ def contact(request):
         )
 
 
-        requests.post(
-            f"https://api.telegram.org/bot{TOKEN}/sendMessage",
-            data={
-                "chat_id": CHAT_ID,
-                "text": text
-            }
-        )
+        try:
+            response = requests.post(
+                f"https://api.telegram.org/bot{TOKEN}/sendMessage",
+                data={
+                    "chat_id": CHAT_ID,
+                    "text": text
+                }
+            )
+
+            print(response.text)
+
+        except Exception as e:
+            print("Telegram error:", e)
 
 
         return render(request, "success.html")
