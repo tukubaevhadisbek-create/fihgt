@@ -1,0 +1,24 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Shield -->
+  <path d="M60 8L100 25V58C100 84 83 103 60 112C37 103 20 84 20 58V25L60 8Z"
+        fill="#0b0b0b"
+        stroke="#e31b23"
+        stroke-width="6"/>
+
+  <!-- Inner shield -->
+  <path d="M60 22L85 32V58C85 76 74 90 60 97C46 90 35 76 35 58V32L60 22Z"
+        fill="#111111"
+        stroke="#e31b23"
+        stroke-width="3"/>
+
+  <!-- Fight symbol -->
+  <path d="M48 42L72 34L67 52H78L55 86L59 62H44L48 42Z"
+        fill="#e31b23"/>
+
+  <!-- Small lines -->
+  <path d="M30 48H38M82 48H90"
+        stroke="#e31b23"
+        stroke-width="3"
+        stroke-linecap="round"/>
+
+</svg>
