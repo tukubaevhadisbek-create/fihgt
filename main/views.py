@@ -18,7 +18,6 @@ def contact(request):
         )
 
 
-        # сохранение заявки в файл
         with open("applications.txt", "a", encoding="utf-8") as f:
             f.write(f"Имя: {training.name}\n")
             f.write(f"Телефон: {training.phone}\n")
@@ -28,9 +27,8 @@ def contact(request):
 
 
 
-        # Telegram Render Environment Variables
-        TOKEN = os.getenv("8866755375:AAG_7p-TdEV-Y4qiJD3nGRiy5CMnlWNZBtA")
-        CHAT_ID = os.getenv("7699419219")
+        TOKEN = os.getenv("BOT_TOKEN")
+        CHAT_ID = os.getenv("CHAT_ID")
 
 
         text = (
@@ -46,7 +44,7 @@ def contact(request):
             response = requests.post(
                 f"https://api.telegram.org/bot{TOKEN}/sendMessage",
                 data={
-                    "chat_id": 7699419219,
+                    "chat_id":CHAT_ID,
                     "text": text
                 },
                 timeout=10
